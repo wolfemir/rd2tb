@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  rd2tb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rd2tb
+    volumes:
+      - ${ZURGDATA_PATH:-./zurgdata}:/zurgdata
+      - ${APPDATA_PATH:-./appdata}:/app/data
+    environment:
+      - TORBOX_API_TOKEN=${TORBOX_API_TOKEN:-b3a5c0f2-a92f-47e1-af95-a7206103c242}
+      - ZURGDATA_FOLDER=/zurgdata
+      - TORBOX_MAX_CONCURRENT=2
+    restart: unless-stopped
+ 
