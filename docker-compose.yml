@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   rd2tb:
-    image: arrrrrr/rd2tb:25
+    image: arrrrrr/rd2tb:27
     container_name: rd2tb
     volumes:
       - /yourzurgvolume/zurgdata:/zurgdata
